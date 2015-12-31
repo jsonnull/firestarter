@@ -1,0 +1,88 @@
+body {
+  background-color: @background-color;
+  color: @text-primary;
+  font-family: @base-font-family;
+  font-size: @font-size-body;
+  line-height: @line-height-body;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: @heading-font-family;
+  letter-spacing: 0;
+  margin: @half-horizontal-gutter 0;
+}
+
+p {
+  margin-bottom: @half-horizontal-gutter;
+}
+
+/*a, a:link, a:visited {o
+  color: @text-primary-accent;
+  text-decoration: none;
+}
+a:active, a:hover {
+  text-decoration: underline;
+}*/
+
+.row {
+    padding: @horizontal-gutter 0;
+}
+
+hr {
+    border-color: @border-color;
+}
+
+// Custom link underline
+// ---------------------
+a {
+    color: @text-primary-accent;
+    text-decoration: none;
+    // Underline via gradient background
+    background-image: linear-gradient(@text-primary-accent 0%, @text-primary-accent 100%);
+    background-repeat: repeat-x;
+    background-size: 1px 1px;
+    background-position: 0 95%;
+    // Tweak position + thickness for high res (1.75x and up) displays
+    @media (-webkit-min-device-pixel-ratio: 1.75),
+           (min-resolution: 168dpi) {
+      background-image: linear-gradient(@text-primary-accent 0%, @text-primary-accent 100%);
+      background-position: 0 93%;
+    }
+    // Clear descendors from underline
+    text-shadow: 3px 0 white, 2px 0 white, 1px 0 white, -1px 0 white, -2px 0 white, -3px 0 white;
+    // Style selected links (or else text-shadow makes it look crazy ugly)
+    // Pseudo selectors must go separately, or they break each other
+    &,
+    > * {
+      &::selection {
+        background-color: lighten(@text-primary-accent, 25%);
+        color: @text-primary;
+        text-shadow: none;
+      }
+      &::-moz-selection {
+        background-color: lighten(@text-primary-accent, 25%);
+        color: @text-primary;
+        text-shadow: none;
+      }
+    }
+    &:hover {
+      color: darken(@text-primary-accent, 11%);
+      background-image: linear-gradient(to bottom, darken(@text-primary-accent, 6%) 0%, darken(@text-primary-accent, 6%) 100%);
+    }
+}
+    a.mod-no_underline {
+        background: none;
+    }
+
+h1, h2, h3 {
+    a {
+    background-size: 1px 2px;
+        @media (-webkit-min-device-pixel-ratio: 1.75),
+               (min-resolution: 168dpi) {
+            background-position: 0 93%;
+            background-image: linear-gradient(@text-primary-accent 0%, @text-primary-accent 100%);
+            background-size: 1px 2px;
+            background-position: 0 93%;
+        }
+    }
+}

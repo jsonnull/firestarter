@@ -1,0 +1,36 @@
+{
+  "name": "firestarter",
+  "version": "0.0.1",
+  "description": "A quick static site generator powered by Gulp and Handlebars.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jsonnull/firestarter"
+  },
+  "author": "Jason Nall <jsonnull@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jsonnull/firestarter/issues"
+  },
+  "homepage": "http://www.jsonnull.com",
+  "dependencies": {
+    "babel-register": "^6.3.13",
+    "core-js": "^2.0.0",
+    "del": "^2.0.2",
+    "front-matter": "^1.0.0",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-cssnano": "^2.0.0",
+    "gulp-filter": "^3.0.1",
+    "gulp-front-matter": "^1.2.3",
+    "gulp-hb": "^2.6.5",
+    "gulp-less": "^3.0.3",
+    "gulp-markdown": "^1.1.0",
+    "gulp-order": "^1.1.1",
+    "gulp-typeset": "0.0.1",
+    "run-sequence": "^1.1.5"
+  }
+}
