@@ -36,7 +36,7 @@ gulp.task('html', ['clean:html'], html(site, config))
 
 gulp.task('static', files(config))
 
-gulp.task('watch', ['default'], function () {
+gulp.task('watch', ['clean:all', 'stylesheets', 'html', 'static'], function () {
   config = Object.assign({}, config, {
     bustCache: true
   })
