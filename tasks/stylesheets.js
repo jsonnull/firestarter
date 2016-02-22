@@ -1,6 +1,7 @@
 var gulp = require('gulp')
 var plumber = require('gulp-plumber')
 var less = require('gulp-less')
+var autoprefixer = require('gulp-autoprefixer')
 var nano = require('gulp-cssnano')
 
 function stylesheetsFactory (config) {
@@ -14,6 +15,10 @@ function stylesheetsFactory (config) {
         paths: [
           config.stylesheets + '/includes'
         ]
+      }))
+      .pipe(autoprefixer({
+          browsers: ['last 2 versions'],
+          cascade: false
       }))
       .pipe(nano())
       .pipe(gulp.dest(DEST))
